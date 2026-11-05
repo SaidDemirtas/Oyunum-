@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConsumableData" format=3 uid="uid://2eteqk3dabh1"]
+
+[ext_resource type="Script" uid="uid://dp7ctgx5kkeqr" path="res://scripts/resources/consumable_data.gd" id="1_bvea4"]
+[ext_resource type="Script" uid="uid://c0musaa6mmgwv" path="res://scripts/resources/card_data.gd" id="1_rrqb0"]
+
+[resource]
+script = ExtResource("1_bvea4")
+item_name = "Health Potion"
+metadata/_custom_type_script = "uid://dp7ctgx5kkeqr"

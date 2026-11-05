@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://c2t4pncv18fnj"]
+
+[ext_resource type="Script" uid="uid://ipi2l3nnwcve" path="res://scripts/ui/inventory_ui.gd" id="1_nuief"]
+[ext_resource type="Resource" uid="uid://b1h8477yybw6g" path="res://data/items/weapons/starter_sword.tres" id="2_bsps8"]
+[ext_resource type="PackedScene" uid="uid://b762dpqh3b6lw" path="res://scenes/ui/ui_inventory_slot.tscn" id="3_ldtye"]
+[ext_resource type="Script" uid="uid://cirb5ys3bdkvc" path="res://scripts/ui/equipment_slot.gd" id="4_xk7lq"]
+[ext_resource type="Texture2D" uid="uid://hvlqk1cm5m8f" path="res://assets/world/eaa7ade7-4e32-451b-a650-cbdf3761860d.jpg" id="5_bsps8"]
+
+[node name="InventoryUI" type="Control" unique_id=1003910866]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nuief")
+test_item = ExtResource("2_bsps8")
+slot_scene = ExtResource("3_ldtye")
+
+[node name="MainLayout" type="HBoxContainer" parent="." unique_id=2077699362]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StoragePanel" type="VBoxContainer" parent="MainLayout" unique_id=1078364143]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemInfoPanel" type="PanelContainer" parent="MainLayout/StoragePanel" unique_id=960747455]
+custom_minimum_size = Vector2(0, 375)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainLayout/StoragePanel/ItemInfoPanel" unique_id=1125030896]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MainLayout/StoragePanel/ItemInfoPanel/VBoxContainer" unique_id=1950958604]
+layout_mode = 2
+
+[node name="RarityLabel" type="Label" parent="MainLayout/StoragePanel/ItemInfoPanel/VBoxContainer" unique_id=1581054999]
+layout_mode = 2
+
+[node name="DescLabel" type="RichTextLabel" parent="MainLayout/StoragePanel/ItemInfoPanel/VBoxContainer" unique_id=1621964841]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainLayout/StoragePanel" unique_id=1686855745]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InventoryGrid" type="GridContainer" parent="MainLayout/StoragePanel/ScrollContainer" unique_id=960182]
+layout_mode = 2
+columns = 5
+
+[node name="EquipmentPanel" type="Control" parent="MainLayout" unique_id=549523945]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterSilhouette" type="TextureRect" parent="MainLayout/EquipmentPanel" unique_id=605891045]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sihouette" type="TextureRect" parent="MainLayout/EquipmentPanel" unique_id=54928121]
+layout_mode = 0
+offset_right = 447.0
+offset_bottom = 648.0
+texture = ExtResource("5_bsps8")
+expand_mode = 1
+
+[node name="WeaponSlot" type="PanelContainer" parent="MainLayout/EquipmentPanel" unique_id=577792478]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16778517
+anchor_top = 0.040123455
+anchor_right = 0.17897084
+anchor_bottom = 0.052469134
+offset_left = 34.0
+offset_top = 263.0
+offset_right = 98.0
+offset_bottom = 327.0
+script = ExtResource("4_xk7lq")
+allowed_slot_type = 2
+slot_type = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="TextureRect" parent="MainLayout/EquipmentPanel/WeaponSlot" unique_id=721442685]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ArmorSlot" type="PanelContainer" parent="MainLayout/EquipmentPanel" unique_id=756623135]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 289.0
+offset_right = 260.0
+offset_bottom = 361.0
+script = ExtResource("4_xk7lq")
+allowed_slot_type = 1
+slot_type = 3
+
+[node name="Icon" type="TextureRect" parent="MainLayout/EquipmentPanel/ArmorSlot" unique_id=1513091366]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HelmetSlot" type="PanelContainer" parent="MainLayout/EquipmentPanel" unique_id=1548658260]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 83.0
+offset_right = 261.0
+offset_bottom = 155.0
+script = ExtResource("4_xk7lq")
+slot_type = 2
+
+[node name="Icon" type="TextureRect" parent="MainLayout/EquipmentPanel/HelmetSlot" unique_id=1491355256]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BootsSlot" type="PanelContainer" parent="MainLayout/EquipmentPanel" unique_id=787138684]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 191.0
+offset_top = 467.0
+offset_right = 260.0
+offset_bottom = 541.0
+script = ExtResource("4_xk7lq")
+allowed_slot_type = 4
+slot_type = 4
+
+[node name="Icon" type="TextureRect" parent="MainLayout/EquipmentPanel/BootsSlot" unique_id=653041610]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NecklaceSlot" type="PanelContainer" parent="MainLayout/EquipmentPanel" unique_id=1633889609]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 183.0
+offset_right = 259.0
+offset_bottom = 254.0
+script = ExtResource("4_xk7lq")
+allowed_slot_type = 3
+slot_type = 5
+
+[node name="Icon" type="TextureRect" parent="MainLayout/EquipmentPanel/NecklaceSlot" unique_id=1798964408]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatsPanel" type="VBoxContainer" parent="MainLayout" unique_id=1316776956]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="StrLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1128128891]
+layout_mode = 2
+
+[node name="HpLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1776364423]
+layout_mode = 2
+
+[node name="ShieldLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1440479865]
+layout_mode = 2
+
+[node name="CritChanceLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1066381764]
+layout_mode = 2
+
+[node name="CritDamageLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=2015284021]
+layout_mode = 2
+
+[node name="LifestealLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1591464482]
+layout_mode = 2
+
+[node name="StunLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1096621423]
+layout_mode = 2
+
+[node name="StrengthBuffLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=400595765]
+layout_mode = 2
+
+[node name="VulnerabilityLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1335466555]
+layout_mode = 2
+
+[node name="WeakenLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1882422592]
+layout_mode = 2

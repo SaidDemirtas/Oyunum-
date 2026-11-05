@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RelicData" format=3 uid="uid://bku8ek6tbaae7"]
+
+[ext_resource type="Script" uid="uid://b01qfgov0ffvy" path="res://scripts/resources/relic_data.gd" id="1_83fe1"]
+
+[resource]
+script = ExtResource("1_83fe1")
+relic_name = "Ancient Stone"
+description = "Savaş başında +5 Kalkan kazandırır."
+metadata/_custom_type_script = "uid://b01qfgov0ffvy"

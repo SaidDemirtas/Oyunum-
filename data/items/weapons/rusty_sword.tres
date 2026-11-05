@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://s0oc7ce6dbrj"]
+
+[ext_resource type="Script" uid="uid://c0musaa6mmgwv" path="res://scripts/resources/card_data.gd" id="1_rxses"]
+[ext_resource type="Resource" uid="uid://d2x0vve52qyai" path="res://data/cards/weapon_cards/strike.tres" id="2_8h8up"]
+[ext_resource type="Script" uid="uid://dhvu8fky37fu6" path="res://scripts/resources/item_data.gd" id="3_71ydu"]
+
+[resource]
+script = ExtResource("3_71ydu")
+item_name = "Rusty Sword"
+card_pool = Array[ExtResource("1_rxses")]([ExtResource("2_8h8up"), null, null])
+metadata/_custom_type_script = "uid://dhvu8fky37fu6"

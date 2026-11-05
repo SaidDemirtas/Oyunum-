@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dc1vkdp6ls1im"]
+
+[ext_resource type="Script" uid="uid://c0musaa6mmgwv" path="res://scripts/resources/card_data.gd" id="1_vrf51"]
+
+[resource]
+script = ExtResource("1_vrf51")
+card_name = "black wind"
+type = 2
+rarity = 2
+apply_vulnerability = 0.5
+apply_stun_chance = 0.02
+apply_strength_buff = 0.5
+metadata/_custom_type_script = "uid://c0musaa6mmgwv"

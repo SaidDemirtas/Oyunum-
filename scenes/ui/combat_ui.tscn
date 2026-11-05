@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dilicbstqpgp0"]
+
+[ext_resource type="Script" uid="uid://dushuiqpylcrn" path="res://scripts/ui/combat_ui.gd" id="1_pxi7o"]
+[ext_resource type="PackedScene" uid="uid://catckkxao5c5h" path="res://scenes/ui/card_slot.tscn" id="2_md4h7"]
+[ext_resource type="Script" uid="uid://blr8shadbiniy" path="res://scripts/ui/drop_zone.gd" id="3_34x8n"]
+
+[node name="CombatUI" type="Control" unique_id=1121847063]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pxi7o")
+
+[node name="PlayerStatusPanel" type="VBoxContainer" parent="." unique_id=1319417744]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 111.0
+script = ExtResource("3_34x8n")
+zone_type = 0
+
+[node name="RelicsScroll" type="ScrollContainer" parent="PlayerStatusPanel" unique_id=1036254383]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="RelicsContainer" type="HFlowContainer" parent="PlayerStatusPanel/RelicsScroll" unique_id=385319246]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerStatusPanel" unique_id=911295041]
+layout_mode = 2
+
+[node name="BlockBar" type="ProgressBar" parent="PlayerStatusPanel" unique_id=1327448690]
+layout_mode = 2
+
+[node name="EquipmentSlots" type="HBoxContainer" parent="." unique_id=1695902735]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="WeaponSlot" parent="EquipmentSlots" unique_id=1938183297 instance=ExtResource("2_md4h7")]
+layout_mode = 2
+
+[node name="ArmorSlot" parent="EquipmentSlots" unique_id=1806346744 instance=ExtResource("2_md4h7")]
+layout_mode = 2
+
+[node name="HelmetSlot" parent="EquipmentSlots" unique_id=1089835112 instance=ExtResource("2_md4h7")]
+layout_mode = 2
+
+[node name="BootsSlot" parent="EquipmentSlots" unique_id=1776762493 instance=ExtResource("2_md4h7")]
+layout_mode = 2
+
+[node name="NecklaceSlot" parent="EquipmentSlots" unique_id=961152712 instance=ExtResource("2_md4h7")]
+layout_mode = 2
+
+[node name="EnemyStatus" type="VBoxContainer" parent="." unique_id=767110258]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("3_34x8n")
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="EnemyStatus" unique_id=1801669877]
+layout_mode = 2
+
+[node name="IntentIcon" type="TextureRect" parent="EnemyStatus" unique_id=875949413]
+layout_mode = 2
+
+[node name="InventoryButton" type="Button" parent="." unique_id=1915450946]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Envanter
+"

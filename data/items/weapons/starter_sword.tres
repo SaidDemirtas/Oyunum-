@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b1h8477yybw6g"]
+
+[ext_resource type="Script" uid="uid://c0musaa6mmgwv" path="res://scripts/resources/card_data.gd" id="1_v5htl"]
+[ext_resource type="Script" uid="uid://dhvu8fky37fu6" path="res://scripts/resources/item_data.gd" id="2_4xj2n"]
+[ext_resource type="Texture2D" uid="uid://ds16fo0fyd8h7" path="res://assets/items/weapons/Ekran görüntüsü 2026-04-28 162735.png" id="2_ys7si"]
+
+[resource]
+script = ExtResource("2_4xj2n")
+category = 1
+item_name = "Başlangıç Kılıcı"
+item_description = "derin bir geçmişi olan esrarengiz bir silah 
+"
+rarity = 4
+icon = ExtResource("2_ys7si")
+str_damage = 40
+bonus_dodge_rate = 5.0
+crit_chance = 0.1
+crit_damage_modifier = 1.5
+lifesteal = 0.05
+metadata/_custom_type_script = "uid://dhvu8fky37fu6"

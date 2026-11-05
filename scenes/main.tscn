@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bwhof5vrfk3b5"]
+
+[ext_resource type="Script" uid="uid://xbgltwjprdds" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c2t4pncv18fnj" path="res://scenes/ui/inventory_ui.tscn" id="1_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=986522844]
+script = ExtResource("1_0wfyh")
+
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=1875156575]
+
+[node name="InventoryUI" parent="UIManager" unique_id=1003910866 instance=ExtResource("1_o5qli")]

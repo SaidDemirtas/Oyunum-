@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dvqrp1lsbhbn3"]
+
+[ext_resource type="Script" uid="uid://c0musaa6mmgwv" path="res://scripts/resources/card_data.gd" id="1_fb7h3"]
+
+[resource]
+script = ExtResource("1_fb7h3")
+card_name = "heavy strike"
+rarity = 1
+base_damage = 15
+apply_lifesteal = 0.05
+metadata/_custom_type_script = "uid://c0musaa6mmgwv"
