@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c2t4pncv18fnj"]
 
-[ext_resource type="Script" uid="uid://ipi2l3nnwcve" path="res://scripts/ui/inventory_ui.gd" id="1_nuief"]
+[ext_resource type="Script" uid="uid://bd0iebakf4spu" path="res://scripts/ui/inventory_ui.gd" id="1_nuief"]
 [ext_resource type="Resource" uid="uid://b1h8477yybw6g" path="res://data/items/weapons/starter_sword.tres" id="2_bsps8"]
 [ext_resource type="PackedScene" uid="uid://b762dpqh3b6lw" path="res://scenes/ui/ui_inventory_slot.tscn" id="3_ldtye"]
-[ext_resource type="Script" uid="uid://cirb5ys3bdkvc" path="res://scripts/ui/equipment_slot.gd" id="4_xk7lq"]
+[ext_resource type="Script" uid="uid://cibyol2fq1rlm" path="res://scripts/ui/equipment_slot.gd" id="4_xk7lq"]
 [ext_resource type="Texture2D" uid="uid://hvlqk1cm5m8f" path="res://assets/world/eaa7ade7-4e32-451b-a650-cbdf3761860d.jpg" id="5_bsps8"]
 
 [node name="InventoryUI" type="Control" unique_id=1003910866]
@@ -188,3 +188,18 @@ layout_mode = 2
 
 [node name="WeakenLabel" type="Label" parent="MainLayout/StatsPanel" unique_id=1882422592]
 layout_mode = 2
+
+[node name="FightButton" type="Button" parent="." unique_id=239897361]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9227431
+anchor_top = 0.9521605
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.94951373, 0, 0.21083474, 1)
+text = "Savaşa Gir"
+metadata/_edit_use_anchors_ = true

@@ -29,10 +29,37 @@ func _ready():
 
 func _update_visuals():
 	self_modulate = Color(1, 1, 1, 1)
-	if slot_data != null and icon != null:
-		icon.texture = slot_data.icon
-	elif icon != null:
+	if icon == null:
+		return
+	if slot_data == null:
 		icon.texture = null
+		tooltip_text = ""
+		return
+	# İkonu olmayan eşya görünmez kalmasın: nadirlik renginde bir kare göster
+	icon.texture = slot_data.icon if slot_data.icon != null else get_placeholder_icon(slot_data.rarity)
+	# Fareyle üstüne gelince eşyanın adı görünsün
+	tooltip_text = slot_data.item_name
+
+
+# --- İKONSUZ EŞYALAR İÇİN GEÇİCİ İKON ---
+# Sıra: Common, Rare, Epic, Mystic, Legendary
+const RARITY_COLORS := [
+	Color(0.55, 0.55, 0.55),  # Yaygın: gri
+	Color(0.25, 0.5, 1.0),    # Nadir: mavi
+	Color(0.65, 0.3, 0.9),    # Epik: mor
+	Color(0.1, 0.8, 0.75),    # Gizemli: turkuaz
+	Color(1.0, 0.6, 0.1)      # Efsanevi: turuncu
+]
+static var _placeholder_cache: Dictionary = {}
+
+static func get_placeholder_icon(rarity: int) -> Texture2D:
+	if _placeholder_cache.has(rarity):
+		return _placeholder_cache[rarity]
+	var img := Image.create(32, 32, false, Image.FORMAT_RGBA8)
+	img.fill(RARITY_COLORS[clampi(rarity, 0, RARITY_COLORS.size() - 1)])
+	var tex := ImageTexture.create_from_image(img)
+	_placeholder_cache[rarity] = tex
+	return tex
 
 # --- 1. METİN2 SİSTEMİ (Çift Tıkla Al, Tek Tıkla Bırak) ---
 func _gui_input(event: InputEvent) -> void:
@@ -78,7 +105,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		
 	# Farenin ucuna yarı saydam resmi tak
 	var preview = TextureRect.new()
-	preview.texture = slot_data.icon
+	preview.texture = icon.texture # (ikonsuz eşyada geçici ikon da görünsün)
 	preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	preview.custom_minimum_size = size
 	
@@ -94,14 +121,24 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	}
 
 # Sürüklenen eşyanın kutuya girmesine izin ver
+# Takasın iki yönü de kontrol edilir: gelen eşya buraya uyuyor mu,
+# buradaki eşya da kaynağa (örneğin bir ekipman yuvasına) uyuyor mu?
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	return typeof(data) == TYPE_DICTIONARY and data.has("source") and data["source"] == "inventory_slot"
+	if not (typeof(data) == TYPE_DICTIONARY and data.has("source") and data["source"] == "inventory_slot"):
+		return false
+	var source_slot = data["slot_node"]
+	return can_accept_item(data["item_data"]) and source_slot.can_accept_item(slot_data)
 
 # Sürüklenen eşyayı bırak ve takas et
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var source_slot = data["slot_node"]
 	var temp_data = slot_data
-	
+
 	# Hedef ile Kaynak arasında takas yap
 	slot_data = source_slot.slot_data
 	source_slot.slot_data = temp_data
+
+	# Değişikliği envantere bildir (PlayerData ve stat paneli güncellensin)
+	var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
+	if inv_ui != null:
+		inv_ui.on_inventory_changed()

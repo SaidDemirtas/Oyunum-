@@ -48,3 +48,4 @@ enum EquipmentSlot {
 
 @export_group("Kart Havuzu (3 Kart)")
 @export var card_pool: Array[CardData] = []
+@export var upgraded_version: ItemData

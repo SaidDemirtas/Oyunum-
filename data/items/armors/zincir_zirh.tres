@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dnpvirtjdwh6o"]
+
+[ext_resource type="Script" uid="uid://c0musaa6mmgwv" path="res://scripts/resources/card_data.gd" id="1_c66y3"]
+[ext_resource type="Script" uid="uid://dhvu8fky37fu6" path="res://scripts/resources/item_data.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+item_name = "Zincir Zırh"
+item_description = "Mağara cücelerinden kalma bir zırh."
+slot_type = 1
+rarity = 2
+bonus_max_hp = 10
+shield = 2

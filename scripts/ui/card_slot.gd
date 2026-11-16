@@ -23,10 +23,10 @@ func _on_mouse_exited() -> void:
 # Dışarıdan bu yuvaya kart verilerini yüklemek için kullanacağımız fonksiyon
 func setup_slot(main_data: CardData, extra1: CardData, extra2: CardData) -> void:
 	if main_data:
-		main_card.texture = main_data.card_image 
+		main_card.texture = main_data.icon  
 	
 	if extra1:
-		$VBoxContainer/HiddenCards/ExtraCard1.texture = extra1.card_image
+		$VBoxContainer/HiddenCards/ExtraCard1.texture = extra1.icon 
 		
 	if extra2:
-		$VBoxContainer/HiddenCards/ExtraCard2.texture = extra2.card_image
+		$VBoxContainer/HiddenCards/ExtraCard2.texture = extra2.icon 

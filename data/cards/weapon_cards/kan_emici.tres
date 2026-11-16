@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_card"]
+
+[resource]
+script = ExtResource("1_card")
+card_name = "Kan Emici"
+description = "Verdiği hasarın bir kısmını can olarak geri kazanır."
+type = 0
+rarity = 1
+base_damage = 7
+apply_lifesteal = 0.3

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_card"]
+
+[resource]
+script = ExtResource("1_card")
+card_name = "İkiz Darbe"
+description = "Hızlı iki vuruşun toplamı."
+type = 0
+rarity = 0
+base_damage = 9

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://mfn4udmmmr8t"]
+
+[ext_resource type="Script" uid="uid://cq3468ggd1khx" path="res://scripts/combat/combat_scene.gd" id="1_ik0t7"]
+
+[node name="CombatScene" type="Control" unique_id=832191643]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ik0t7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=211852004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07130969, 0.06673291, 0.07828256, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=851271983]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="Layout" type="VBoxContainer" parent="Margin" unique_id=990404609]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="EnemyPanel" type="PanelContainer" parent="Margin/Layout" unique_id=213587241]
+layout_mode = 2
+
+[node name="EnemyInfo" type="VBoxContainer" parent="Margin/Layout/EnemyPanel" unique_id=318744269]
+layout_mode = 2
+
+[node name="EnemyLabel" type="Label" parent="Margin/Layout/EnemyPanel/EnemyInfo" unique_id=1649422907]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.003921569, 0.09019608, 1)
+theme_override_font_sizes/font_size = 24
+text = "Düşman "
+
+[node name="IntentLabel" type="Label" parent="Margin/Layout/EnemyPanel/EnemyInfo" unique_id=1124984391]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Niyet"
+
+[node name="LogBox" type="RichTextLabel" parent="Margin/Layout" unique_id=1572629958]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 0.98039216, 0.03529412, 0.98039216)
+bbcode_enabled = true
+scroll_following = true
+
+[node name="PlayerRow" type="HBoxContainer" parent="Margin/Layout" unique_id=291853719]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PlayerLabel" type="Label" parent="Margin/Layout/PlayerRow" unique_id=75423065]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Sen"
+
+[node name="APLabel" type="Label" parent="Margin/Layout/PlayerRow" unique_id=330125688]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Aksiyon: 2 / 2"
+
+[node name="Spacer" type="Control" parent="Margin/Layout/PlayerRow" unique_id=1998120191]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EndTurnButton" type="Button" parent="Margin/Layout/PlayerRow" unique_id=627815009]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+text = "Turu Bitir"
+
+[node name="RestartButton" type="Button" parent="Margin/Layout/PlayerRow" unique_id=1347465179]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+text = "Yeniden Başla"
+
+[node name="HandBox" type="HBoxContainer" parent="Margin/Layout" unique_id=1917367111]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1

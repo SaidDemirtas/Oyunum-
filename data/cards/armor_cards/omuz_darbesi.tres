@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_card"]
+
+[resource]
+script = ExtResource("1_card")
+card_name = "Omuz Darbesi"
+description = "Zırhla düşmana çarpar."
+type = 0
+rarity = 0
+base_damage = 5
+base_shield = 4

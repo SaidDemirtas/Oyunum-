@@ -22,6 +22,7 @@ buses/default_bus_layout=""
 
 CardDatabase="*uid://diao6bdvq74ul"
 LootGenerator="*uid://c6v5wl0jnubkt"
+PlayerData="*uid://b4km1o5ntgeln"
 
 [physics]
 

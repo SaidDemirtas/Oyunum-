@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/item_data.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+item_name = "Demir Miğfer"
+item_description = "Ezilmiş ama hâlâ işe yarayan bir miğfer."
+slot_type = 0
+rarity = 1
+bonus_max_hp = 5

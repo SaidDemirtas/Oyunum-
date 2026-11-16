@@ -21,6 +21,8 @@ enum CardType { ATTACK, DEFENSE, SKILL, POWER }
 @export var icon: Texture2D
 @export var energy_cost: int = 1
 @export var type: CardType = CardType.ATTACK
+enum TargetType { SINGLE_ENEMY, ALL_ENEMIES, SELF }
+@export var target_type: TargetType = TargetType.SINGLE_ENEMY
 @export var rarity: CardRarity = CardRarity.COMMON
 
 # --- KATMAN 1: YAYGIN (COMMON) VE ÜZERİ ---
